@@ -119,26 +119,6 @@ class aide (
     ensure => $version,
   }
 
-  -> class { 'aide::cron':
-    aide_path               => $aide_path,
-    cat_path                => $cat_path,
-    rm_path                 => $rm_path,
-    head_path               => $head_path,
-    mail_path               => $mail_path,
-    minute                  => $minute,
-    hour                    => $hour,
-    date                    => $date,
-    month                   => $month,
-    weekday                 => $weekday,
-    exclude_config_argument => $exclude_config_argument,
-    nocheck                 => $nocheck,
-    mailto                  => $mailto,
-    mail_only_on_changes    => $mail_only_on_changes,
-    max_mail_lines          => $max_mail_lines,
-    conf_path               => $conf_path,
-    require                 => Package[$package],
-  }
-
   -> class { 'aide::config':
     conf_path               => $conf_path,
     db_path                 => $db_path,
